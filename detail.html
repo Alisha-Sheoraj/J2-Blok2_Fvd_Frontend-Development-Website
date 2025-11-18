@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Alisha S.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>MagicSpoon</title>
+
+	<link href="styles/style.css" rel="stylesheet">
+	<script src="scripts/script.js" defer></script>
+
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+
+<body>
+	<header>
+		<div>
+			<p>Just dropped: Hot Choco Cereal! Limited stock☕️❄️</p>
+		</div>
+		<nav>
+			<button aria-label="Hamburger menu"></button>
+			<a href="#"><img src="images/Plaatshouder.jpg" alt="Magicspoon homepagina"></a>
+			<ul>
+				<li>
+					<a href="#"><img src="images/Plaatshouder.jpg" alt="Mijn profiel"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/Plaatshouder.jpg" alt="Winkelmand"></a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+    <main>
+        <section>
+            <img class="productIMG" src="images/Plaatshouder.jpg" alt="">
+            
+            <ul>
+                <li><img src="images/Plaatshouder.jpg" alt="Product image 1"></li>
+                <li><img src="images/Plaatshouder.jpg" alt="Product image 2"></li>
+                <li><img src="images/Plaatshouder.jpg" alt="Product image 3"></li>
+                <li><img src="images/Plaatshouder.jpg" alt="Product image 4"></li>
+            </ul>
+            
+            <section class="productDetails">
+                <h1>Double Chocolate</h1>
+                <h2>16 Cereal treats (4 boxes)</h2>
+                <a href="#">3084 Reviews</a>
+                <p class="description">Who said chocolate’s just for dessert? Meet our new Double Chocolate Treats! 
+                    Now you can have a crispy, high-protein snack at any time with 12g protein and 1g sugar per serving. 
+                    Stock up with this 4-pack for twice the indulgence in just one bite. </p>
+
+                <button>See Nutritional Facts</button>
+
+                    <ul class="nutritionList">
+                        <li>2g Net Carbs</li>
+                        <li>1g Complete Protein</li>
+                        <li>10g Total Sugars</li>
+                        <li>No Artificial Ingredients</li>
+                    </ul>
+            </section>
+
+            <section class="chooseFlavor">
+                <h3>1: Choose Your Flavor</h3>
+                
+                <ul class="flavor-list">
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Variety">
+                        <p>Variety</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Custom Mixed Bundle">
+                        <p>Custom Mixed Bundle</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Pie">
+                        <p>Pie</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Double Chocolate">
+                        <p>Double Chocolate</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Blueberry Muffin">
+                        <p>Blueberry Muffin</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Strawberry Milkshake">
+                        <p>Strawberry Milkshake</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img src="images/Plaatshouder 2.jpeg" alt="Marshmallow">
+                        <p>Marshmallow</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="chooseFrequency">
+                <h3>2: Choose Your Frequency</h3>
+
+                <div class="oneTimePurchase">
+                    <label>
+                        <input type="radio" name="purchase-type">ONE-TIME PURCHASE
+                    </label>
+
+                    <h4>$39.00</h4>
+                    <p>$2.43 / SERVING</p>
+                </div>
+
+
+                <div class="subscribe">
+                    <label>
+                        <input type="radio" name="purchase-type">SUBSCRIBE & SAVE 20%
+                    </label>
+
+                    <h4>$31.20</h4>
+                    <p>$1.95 / SERVING</p>
+                </div>
+
+                <!--https://www.w3schools.com/tags/tag_select.asp-->
+                <select name="delivery" id="deliveryOptions">
+                    <option value="14days">14 Days</option>
+                    <option value="30days">30 Days</option>
+                    <option value="45days">45 Days</option>
+                    <option value="60days">60 Days</option>
+                </select>
+
+                <ul class="subscriptionBenefits">
+                    <li>Free bowl set with your first subscription order</li>
+                    <li>Change flavors anytime + VIP access to launches</li>
+                    <li>20% savings + exclusive deals</li>
+                    <li>Skip or cancel delivery anytime</li>
+                </ul>
+            </section>
+
+            <section class="addToCart">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" type="number" min="1" value="1">
+                <button class="addToCartBTN">Add to Cart</button>
+            </section>
+
+            <p>Try risk-free, 100% happiness guaranteed. See terms of use.</p>
+        </section>
+
+        <section>
+            <h2>Combine Favorites. Save More.</h2>
+            <p>Build your own box with cereal, granola & treats.</p>
+
+            <a href="#" class="LinkButton">Build your own</a>
+            <img src="#" alt="A variety of tasty options to make your own bundle with">
+        </section>
+
+        <div></div> <!--Moving banner animation-->
+
+        <section>
+            <img src="images/Plaatshouder 2.jpeg" alt="A stack of chocolate brownies">
+
+            <ul>
+                <li>
+                    <h2>High Protein</h2>
+                    <p>12g complete protein per serving.</p>
+                </li>
+                <li>
+                    <h2>Gluten Free</h2>
+                    <p>No gluten ingredients.</p>
+                </li>
+                <li>
+                    <h2>KETO-FRIENDLY</h2>
+                    <p>2g net carbs per serving.</p>
+                </li>
+                <li>
+                    <h2>Grain free</h2>
+                    <p>No wheat, rice, or soy.</p>
+                </li>
+                <li>
+                    <h2>1g Sugar</h2>
+                    <p>No cane sugar, corn syrup, or sugar alcohols.</p>
+                </li>
+                <li>
+                    <h2>Natural Flavors</h2>
+                    <p>No artificial colors or sweeteners.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Us VS. Them</h2>
+            <h3>How do we stack up to the “classics”?</h3>
+
+            <img src="images/Plaatshouder 2.jpeg" alt="">
+
+            <!--https://www.w3schools.com/html/html_tables.asp-->
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Magic Spoon</th>
+                    <th>Rice Krispie Treat</th>
+                </tr>
+  
+                <tr>
+                    <td>Protein</td>
+                    <td>12g</td>
+                    <td>1g</td>
+                </tr>
+
+                <tr>
+                    <td>Sugar</td>
+                    <td>1g</td>
+                    <td>8g</td>
+                </tr>
+
+                <tr>
+                    <td>Net Carbs</td>
+                    <td>2g</td>
+                    <td>17g</td>
+                </tr>
+
+                <tr>
+                    <td>Serving Size</td>
+                    <td>40g</td>
+                    <td>22g</td>
+                </tr>
+
+                <tr>
+                    <td>Grain Free</td>
+                    <td><img src="images/Plaatshouder 2.jpeg" alt="checkmark"></td>
+                    <td><img src="images/Plaatshouder 2.jpeg" alt="cross"></td>
+                </tr>
+
+                <tr>
+                    <td>Gluten Free</td>
+                    <td><img src="images/Plaatshouder 2.jpeg" alt="checkmark"></td>
+                    <td><img src="images/Plaatshouder 2.jpeg" alt="cross"></td>
+                </tr>
+            </table>
+
+            <p>Information as of December 2022.</p>
+        </section>
+
+        <section>
+            <!--review section-->
+        </section>
+    </main>
+
+	<footer>
+		<section>
+			<a href="#" class="LinkButton">Explore Flavors</a>
+
+			<ul>
+				<li>
+					<a href="#"><img src="images/Plaatshouder 2.jpeg" alt="Instagram icon"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/Plaatshouder 2.jpeg" alt="Facebook icon"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/Plaatshouder 2.jpeg" alt="Twitter icon"></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/Plaatshouder 2.jpeg" alt="TikTok icon"></a>
+				</li>
+			</ul>
+
+			<h2>Don't miss the magic:</h2>
+
+            <!--https://www.w3schools.com/html/html_form_input_types.asp-->
+            <!--https://www.w3schools.com/tags/att_input_type_email.asp-->
+			<form action="#">
+  				<label for="email">Your email</label>
+  				<input type="email" id="email" name="email" placeholder="Your email">
+   				<input type="submit" value="Subscribe" aria-label="Submit your email to the newsletter">
+			</form>
+
+			<img src="images/Plaatshouder.jpg" alt="MagicSpoon logo">
+
+			<ul>
+				<li>
+					<a href="">Terms of Use</a>
+				</li>
+				<li>
+					<a href="">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="">Accessibility Policy</a>
+				</li>
+				<li>
+					<a href="">FAQ</a>
+				</li>
+				<li>
+					<a href="">Reviews</a>
+				</li>
+				<li>
+					<a href="">Jobs</a>
+				</li>
+				<li>
+					<a href="">Track Orders</a>
+				</li>
+				<li>
+					<a href="">Store Locator</a>
+				</li>
+				<li>
+					<a href="">Terms of Service</a>
+				</li>
+				<li>
+					<a href="">Refund policy</a>
+				</li>
+			</ul>
+
+			<p>© 2025 Magic Spoon</p>
+		</section>
+	</footer>
+</body>
