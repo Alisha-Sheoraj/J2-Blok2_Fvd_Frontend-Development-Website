@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.1 25">
-                    <defs>
-                    <linearGradient id="grad2" x1="50%" y1="0%" x2="50%" y2="100%">
-                        <stop offset="0%" style="stop-color:#d034a2;stop-opacity:1"><animate attributeName="stop-color" values="#d034a2; #5222e3; #d034a2;" dur="5s" repeatCount="indefinite"></animate></stop>
-                    </linearGradient>
-                    </defs>
-                    <path d="M12.24 12.1A6.62 6.62 0 0 0 15 5.17a7.19 7.19 0 0 0-5-5 6.61 6.61 0 0 0-5.2 11.89 1.2 1.2 0 0 1-.11 2.08A8.56 8.56 0 0 0 0 21.77V25h17.1v-3.23a8.53 8.53 0 0 0-4.68-7.62c-.99-.51-1.1-1.43-.18-2.05z"></path>
-                </svg>
