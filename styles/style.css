@@ -1,0 +1,1101 @@
+/**************/
+/* CSS REMEDY */
+/*
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+*/
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*
+:root {
+	--color-text:#111;
+	--color-background:#eee;
+}
+*/
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* jouw code */
+@font-face {
+	font-family: Kopjes;
+	src: url("../fonts/nexa-heavy.ttf");
+}
+@font-face {
+	font-family: Speciaal;
+	src: url("../fonts/atypdisplay-medium.ttf");
+}
+@font-face {
+	font-family: Testemonials;
+	src: url("../fonts/just-sans-outline-regular.otf");
+}
+@font-face {
+	font-family: Bodytekst;
+	src: url("../fonts/cerebri-sans-regular.ttf");
+}
+
+:root {
+	/* Section 1 */
+	/* .notification BKG */
+	--notification-bkg: rgb(213, 10, 174);
+
+	/*General BKG colors*/
+	--general-bkg-white: rgb(255, 255, 255);
+
+	/* .navReview BKG */
+	--nav-review-bkg: rgb(249, 239, 140);
+
+	/* .productCarousel Section 2 */
+	--product-carousel-bkg: rgb(218, 217, 255);
+
+	/* .subscriptionSection Section 3 */
+	--subscription-gradient-3: linear-gradient(to bottom, rgb(200,240,255) 0%, rgb(212,190,255) 20%);
+
+	/* .subscriptionSection Section 4 */
+	--bestseller-gradient-4: linear-gradient(to bottom, rgb(200,240,255) 0%, rgb(212,190,255) 50%);
+
+	/* .fanFavesSection Section 5 */
+	--fanfaves-gradient-5: linear-gradient(to bottom, rgb(243,238,202) 0%, rgb(191,239,255) 60%);
+
+	/* .fanFavesSection div button  Section 5*/
+	--fanfaves-button-bkg: rgb(202, 196, 244);
+
+	/* .testimonialsSection Section 6 */
+	--testimonials-gradient-6: linear-gradient(to bottom, rgb(172,72,238) 0%, rgb(91,1,237) 25%, rgb(91,1,237) 80%, rgb(195,227,253) 100%);
+
+	/* Footer */
+	--footer-bkg: rgb(0, 0, 0);
+
+
+	/* .LinkButton BKG */
+	--linkbutton-darkpurple: rgb(63, 7, 145);
+	--linkbutton-white: rgb(255, 255, 255);
+	--linkbutton-purple: rgb(91, 0, 255); /* Section 4 */
+
+
+	/* text colors */
+	--text-white: rgb(255, 255, 255);
+	--text-darkpurple: rgb(63, 7, 145);
+	--text-lightpurple: rgb(111, 14, 150); /* Section 1 */
+
+
+	/* .testimonialsSection .LinkButton Section 6 & footer .LinkButton Section 7 */
+	/* Border colors */
+  	--border-white: rgb(255, 255, 255); 
+
+
+	/*Javascript specific colors */
+   	--javascript-gradient-1: linear-gradient(to bottom, rgb(243,238,202) 0%, rgb(191,239,255) 60%);
+    --javascript-gradient-2: linear-gradient(to bottom, rgb(250,208,174) 0%, rgb(252,245,176) 60%);
+	--javascript-gradient-3:  linear-gradient(to bottom, rgb(254,238,220) 0%, rgb(202,179,252) 60%);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root{
+  		/* Section 1 */
+  		/* .notification BKG */
+		--notification-bkg: rgb(63, 7, 145);
+
+		--general-bkg-white: rgb(12, 12, 12);
+
+		/* .navReview BKG */
+		--nav-review-bkg: rgb(40, 4, 93);
+
+		/* .productCarousel Section 2 */
+		--product-carousel-bkg:  rgb(26, 26, 26);
+
+		/* .subscriptionSection Section 3 */
+		--subscription-gradient-3: linear-gradient(to top,  rgb(12, 12, 12) 0%, rgb(12, 12, 12)  100%);
+
+		/* .subscriptionSection Section 4 */
+		--bestseller-gradient-4: linear-gradient(to top,  rgb(26, 26, 26) 0%, rgb(26, 26, 26)  100%);
+
+		/* .fanFavesSection Section 5 */
+		--fanfaves-gradient-5: linear-gradient(to top,  rgb(12, 12, 12) 0%, rgb(12, 12, 12)  100%);
+
+		/* .fanFavesSection div button  Section 5*/
+		--fanfaves-button-bkg: rgb(202, 196, 244);
+
+		/* .testimonialsSection Section 6 */
+		--testimonials-gradient-6: linear-gradient(to top,  rgb(26, 26, 26) 0%, rgb(26, 26, 26)  100%);
+
+
+		/* Footer */
+		--footer-bkg: rgb(0, 0, 0);
+
+		/* text colors */
+		--text-white: rgb(255, 255, 255);
+		--text-darkpurple: rgb(255, 255, 255);
+
+		/* .testimonialsSection .LinkButton Section 6 & footer .LinkButton Section 7 */
+		/* Border colors */
+		--border-white: rgb(63, 7, 145); 
+
+
+		/*Javascript specific colors */
+		--javascript-gradient-1: linear-gradient(to bottom, rgb(140, 7, 145) 0%, rgb(12, 12, 12)  30%);
+		--javascript-gradient-2: linear-gradient(to bottom, rgb(7, 81, 145) 0%, rgb(12, 12, 12)  30%);
+		--javascript-gradient-3:  linear-gradient(to bottom, rgb(145, 78, 7) 0%, rgb(12, 12, 12)  30%);
+	}
+}
+
+
+
+*{
+  	margin: 0;
+  	padding: 0;
+}
+
+img{
+	width: 100px;
+}
+
+/*Header*/
+/*de melding bovenaan de pagina*/
+.notification{
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+	text-align: center;
+  	width: 100%;
+  	height: 6vh;
+  	position:absolute;
+  	top: 0;
+  	padding: 25px 25px;
+  	background-color: var(--notification-bkg);
+  	box-sizing: border-box;
+  	justify-content: center;
+}
+
+.notification p{
+	color: var(--text-white);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+nav{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	background-color: transparent;
+	position: absolute; /*was og fixed zodat het meescrolt, wnnr javascript dan veranderen*/
+	top: 60px;
+	width: 100%;
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+}
+
+nav li{
+  	text-decoration: none;
+	padding: 0.4em;
+}
+
+nav li img{
+	width: 1.2em;
+}
+
+nav img{
+	width: 5.5em;
+}
+
+nav div a img{
+	padding: 0 50px;
+}
+
+button {
+	background-color: transparent;
+  	border: none;
+}
+
+button img, li img {
+ 	width: 25px;
+}
+
+/*Hamburger menu*/
+/*bron: https://www.w3schools.com/howto/howto_js_curtain_menu.asp*/
+.navOverlay{
+	width: 100%;	
+  	height: 100%;
+  	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+  	left: 0;
+  	top: 0;
+	overflow-x: hidden;
+  	background-color: var(--general-bkg-white);
+  	transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the close button (top right corner) */
+.navOverlay .closebtn {
+  	position: absolute;
+  	top: 25px;
+  	right: 45px;
+  	font-size: 45px;
+	color: var(--text-darkpurple);
+}
+
+.navOverlay-content {
+  	position: relative;
+  	top: 15%;
+  	width: 100%;
+  	display:flex;
+  	flex-direction: column;
+	align-items: center;
+}
+
+.navOverlay-content ul{
+	list-style: none;
+	margin: 0 20px;
+}
+
+.navOverlay-content li{
+	border-bottom-style: solid;
+	border-width: 1.5px;
+  	color: var(--text-darkpurple);
+	padding: 10px 0;
+	display:flex;
+  	flex-direction: column;
+	align-items: center;
+}
+
+.navOverlay-content li a{
+  	display:flex;
+  	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+	text-decoration: none;
+}
+
+.navOverlay-content li a img{
+	width: 25%;
+	height: 25%;
+	margin: 0 20px 0 0;
+}
+
+.navOverlay-content li a h2{
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	font-size: 20px;
+  	color: var(--text-darkpurple);
+	text-transform: uppercase;
+}
+
+.navOverlay-content .LinkButton{
+    width: 300px;
+	height: 30px;
+	margin: 20px 0 0.5em 0;
+  	background: var(--linkbutton-darkpurple);
+  	color: rgb(255, 255, 255);
+  	border-radius: 40px;
+  	font-size: 16px;
+  	font-weight: bold;
+	text-align: center;
+    text-transform: uppercase;
+  	flex-direction: row;
+	align-items: center;
+	text-decoration: none;
+	justify-content: center;
+    padding: 10px 25px;
+}
+
+.navOverlay-content .LinkButton img{
+	width: 15px;
+	height: 15px;
+	padding-left: 5px;
+	margin: 0;
+}
+.navOverlay-content div ul{
+	list-style: none;
+	display: grid;
+  	grid-template-columns: 1fr 1fr;
+	margin-top: 20px;
+}
+
+.navOverlay-content div li{
+  	width: 100%;
+	height: 40px;
+  	aspect-ratio: 1 / 1;
+  	object-fit: cover;
+  	display: block;
+	border: none;
+	margin: 0 30px;
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	font-size: 18px;
+  	color: var(--text-darkpurple);
+	text-transform: uppercase;
+	justify-content: center;
+	padding: 15px 0;
+	margin: 0;
+	text-align: center;
+}
+
+.navOverlay-content div li a{
+	display: flex;
+	justify-content: center;
+}
+
+.navOverlay-content .navReview{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 20px;
+	padding: 20px;
+	background-color: var(--nav-review-bkg);
+	border-radius: 10px;
+}
+
+.navOverlay-content .navReview p{
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  	color: var(--text-darkpurple);
+    margin: 20px 0 5px 0;
+}
+
+.navOverlay-content .navReview div{
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	text-align: center;
+	gap: 5px;
+}
+
+.navOverlay-content .navReview div p{
+	font-weight: bold;
+}
+
+.navOverlay-content .navReview div img{
+	width: 15px;
+	height: 15px;
+}
+/*Header_Einde*/
+
+/*Main*/
+/*Section 1*/
+.LandingSection{
+  	background-image: url("../images/homepage-bkg-img.png");
+  	background-size: cover;  
+  	background-position: center; 
+  	background-repeat: no-repeat; 
+  	height: 100vh;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	text-align: center;
+  	padding-top: 7em;
+  	color: var(--text-white);
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+h1{
+	margin: 0.5em 0;
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	width: 75%;
+}
+
+.LandingSection .LinkButton{
+	background-color: var(--linkbutton-white); 
+  	color: var(--text-lightpurple); 
+  	padding: 10px 25px; 
+	width: 70%;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 30px; 
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+/*Section 1_Einde*/
+
+/*Section 2
+bron1: https://www.youtube.com/watch?v=2_E5uoiLCLY
+bron2: https://www.w3schools.com/howto/howto_css_image_gallery_scroll.asp
+bron3: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x#:~:text=The%20overflow%2Dx%20CSS%20property,using%20the%20overflow%20shorthand%20property.*/
+.productCarousel {
+	background-color: var(--product-carousel-bkg);
+	width: 100%;
+	overflow-x: auto;        
+	white-space: nowrap;
+}
+
+.productCarousel ul {
+	display: flex;
+	gap: 20px;
+	padding: 25px 20px;
+	list-style: none;
+	width: 100%;
+}
+
+.productCarousel li {
+	text-align: center;
+	display: flex;
+  	flex-direction: column-reverse;
+}
+
+.productCarousel li h2 {
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 200;
+	color: var(--text-darkpurple);
+}
+
+.productCarousel img {
+	width: 7em;
+}
+/*Section 2_Einde*/
+
+
+/*Section 3*/
+.subscriptionSection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: var(--subscription-gradient-3);
+	padding: 25px 20px;
+}
+
+.subscriptionSection img{
+	width: 100%;
+	border-radius: 15px;
+	margin-bottom: 2em;
+}
+
+.subscriptionSection h2{
+  	text-align: left;
+  	color: var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 30px;
+}
+
+.subscriptionSection p{
+	align-self: flex-start;
+  	color: var(--text-darkpurple);
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin: 25px 0;
+}
+
+.subscriptionSection ul{
+	display: flex;
+	flex-direction: column;
+}
+
+.subscriptionSection li{
+	display: flex;
+	flex-direction: row;
+  	text-align: left;
+	align-items: center;
+  	color: var(--text-darkpurple);	
+}
+
+.subscriptionSection li img{
+	width: 40px;
+	margin: 0 7px 15px 0;
+}
+
+.subscriptionSection li p{
+	margin: 0;
+	font-size: 16px;
+}
+
+.subscriptionSection .LinkButton{
+	background-color: var(--linkbutton-darkpurple);
+  	color: var(--text-white); 
+  	padding: 10px 25px; 
+	width: 85%;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 30px; 
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+/*Section 3_Einde*/
+
+
+/* Section 4 */
+.bestSellers{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: var(--bestseller-gradient-4);
+	height: 700px;
+	width: 100%;
+	padding-top: 40px;
+}
+
+.bestSellers h2{
+  	text-align: center;
+  	color: var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 38px;
+	margin-bottom: 40px ;
+}
+
+.bestSellersCardsCarousel{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	overflow-x: auto;    
+	margin-bottom: 35px;    
+}
+
+.bestSellersCards{
+	height: 400px;
+	min-width: 260px;
+	background: var(--general-bkg-white);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	margin: 0 10px 0 10px;
+}
+
+.imgWrap{
+  	position: relative;
+  	width: 100%;
+  	display: flex;
+  	justify-content: center;
+}
+
+.imgWrap .product{
+  	width: 200px;
+}
+
+.imgWrap .badge{
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 80px;
+}
+
+.bestSellersCards div{
+  	display: flex;
+  	gap: 10px;
+}
+
+.bestSellersCards h3{
+	font-size: 19px;
+	text-align: center;
+  	color: var(--text-darkpurple);
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	font-weight: bolder;
+}
+
+.bestSellersCards h4{
+	text-align: center;
+  	color: var(--text-darkpurple);
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	text-transform: uppercase;
+	line-height: 30px;
+	font-weight: bolder;
+}
+
+.bestSellersCards div h3:last-child{
+  	color: var(--text-darkpurple);
+  	font-weight: bold;
+  	text-decoration: line-through;
+}
+
+.bestSellersCards img:first-child{
+  	width: 60px;
+}
+
+
+.bestSellersCards a img:first-child{
+  	width: 200px;
+  	margin-bottom: 5px;
+}
+
+.bestSellersCards p{
+  	font-size: 14px;
+  	margin-bottom: 15px;
+	color: var(--text-darkpurple);
+}
+
+.bestSellersCardsA{
+  	background: var(--linkbutton-purple);
+  	color: var(--text-white);
+  	padding: 12px 30px;
+  	border-radius: 30px;
+  	text-decoration: none;
+  	font-weight: bold;
+}
+
+.bestSellers .LinkButton{
+	background-color: var(--linkbutton-purple);
+  	color: var(--text-white); 
+  	padding: 10px 25px; 
+	width: 80%;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 40px; 
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/* Section 4 einde */
+
+
+/* Section 5 */
+.fanFavesSection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: var(--fanfaves-gradient-5);
+	padding: 25px 20px;
+}
+
+.fanFavesSection h2{
+  	text-align: center;
+  	color: var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 35px;
+	margin-bottom: 30px ;
+}
+
+.fanFavesSection div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+.fanFavesSection div button{
+	display: flex;               
+	align-items: center;          
+	justify-content: center;   
+	gap: 6px;  
+    width: 110px;
+    height: 35px;
+	background-color: var(--fanfaves-button-bkg);
+	border-radius: 10px;
+	margin: 0 4px;
+	font-size: 15px;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+  	color: var(--text-darkpurple);
+}
+
+.fanFavesSection div button img{
+	width: 20px;
+}
+
+/*Javascript code*/
+.is-hidden {
+  	display: none;
+}
+/*Javascript code_Einde*/
+
+
+.fanFavesSection img{
+	width: 90%;
+}
+
+.fanFavesSection ul li{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 0.402);
+	border-radius: 15px;
+	padding: 15px 5px;
+	margin: 20px 0;
+}
+
+.fanFavesSection li img{
+	width: 30px;
+	height: 30px;
+	background-color: var(--linkbutton-white);
+	border-radius: 50%;
+	padding: 17px;
+	margin-left: 15px;
+	object-fit: contain;
+}
+
+.fanFavesSection li div{
+	display: flex;             
+	flex-direction: column;  
+	justify-content: center; 
+	text-align: left;   
+	align-items: flex-start;   
+	margin: 0 0 0 15px;
+}
+
+.fanFavesSection li div h3{
+	font-size: 20px;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+  	color: var(--text-darkpurple);
+}
+
+.fanFavesSection li div p{
+	font-size: 13px;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+  	color: var(--text-darkpurple);
+}
+
+.fanFavesSection .LinkButton{
+  	background: var(--linkbutton-darkpurple);
+  	color: var(--text-white); 
+  	padding: 10px 25px; 
+	width: 85%;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 40px; 
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+
+.fanFavesSection .partnerReviews{
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    width: 100%;
+	margin: 60px 0 25px 0;
+}
+
+.fanFavesSection .partnerReviews ul{
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    display: flex;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/*bron1: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+bron2: https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp*/
+.fanFavesSection .partnerReviews ul::-webkit-scrollbar {
+    display: none;
+} 
+
+.partnerReviews ul li{
+	min-width: 100%;                 
+	scroll-snap-align: center;       
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	margin: 10px;
+}
+
+.partnerReviews ul li img{
+	width: 40%;
+	background-color: transparent;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:first-of-type*/
+.partnerReviews ul li img:first-of-type{
+	width: 15%;
+	background-color: transparent;
+	border-radius: 0;
+	margin: 15px;
+	padding: 0;
+}
+
+.partnerReviews ul li p{
+  	color: var(--text-darkpurple);
+	text-align: center;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+.fanFavesSection .partnerReviews button{
+	background-color: transparent;
+  	color: var(--text-darkpurple);
+	font-size: 30px;
+	width: 15px;
+	margin: 0 15px;
+}
+/* Section 5 einde */
+
+
+/* Section 6 */
+.testimonialsSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: var(--testimonials-gradient-6);
+}
+
+.testimonialsSection ul{
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    width: 100%;
+	list-style: none;
+	margin-top: 20px;
+}
+
+.testimonialsSection ul::-webkit-scrollbar {
+    display: none;
+} 
+
+.testimonialsSection li{
+	min-width: 100%; 
+	scroll-snap-align: center;  
+}
+
+.testimonialsSection img{
+	background-color: transparent;
+}
+
+.testimonialsSection .testimonialText{
+	background-color: var(--general-bkg-white);
+	padding: 30px;
+	height: 400px;
+	margin: 0 20px;
+  	color: var(--text-darkpurple);
+	text-align: center;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+}
+
+.testimonialsSection .testimonialText h3{
+	font-size: 26px;
+	font-family: Testemonials, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+.testimonialsSection .testimonialText h4{
+	font-size: 14px;
+	font-weight: 200;
+}
+
+.testimonialsSection .testimonialText p{
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.testimonialText .circles{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 50px;
+	gap: 0.5em;
+}
+
+.testimonialText .circles img{
+	width: 8%;
+}
+
+/*bron:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/translateY*/
+.testimonialsSection li img{
+	width: 150px;
+	border-radius: 50%;
+	transform: translateY(-50%);
+}
+
+.testimonialsSection h2{
+  	text-align: center;
+  	color: var(--text-white);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 40px;
+	margin: 0 20px 5px 20px;
+}
+
+.testimonialsSection h2:last-of-type{
+	text-align: center;
+  	color: var(--text-white);
+	line-height: 35px;
+	font-size: 40px;
+	font-family: Testemonials, Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+
+.testimonialsSection .LinkButton{
+  	background: transparent;
+  	color: var(--text-white); 
+  	padding: 10px 25px; 
+	width: 120px;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 40px; 
+	border-style: solid;
+	border-color: var(--border-white);
+	border-width: 2px;
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 120px;
+}
+
+/*bron1:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns
+bron2:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio
+bron3:https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts*/
+.imgGrid {
+  	display: grid;
+  	grid-template-columns: 1fr 1fr;
+  	width: 100%;
+}
+
+.imgGrid img {
+  	width: 100%;
+  	aspect-ratio: 1 / 1;
+  	object-fit: cover;
+  	display: block;
+}
+/* Section 6 einde */
+
+
+/* Section 7_Footer*/
+footer{
+	background-color: var(--footer-bkg);
+}
+
+footer section {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 60px 20px; 
+}
+
+footer .LinkButton{
+  	background: transparent;
+  	color: var(--text-white); 
+  	padding: 10px 25px; 
+	width: 130px;
+  	text-align: center;
+  	text-decoration: none; 
+  	border-radius: 40px; 
+	border-style: solid;
+	border-color: var(--border-white);
+	border-width: 2px;
+  	cursor: pointer; 
+	margin: 0.5em 0;
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+}
+
+footer h2, footer p{
+	color: var(--text-white);
+}
+
+footer p{
+	font-size: 13px;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+}
+
+footer h2{
+	font-size: 19px;
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	font-weight: 500;
+}
+
+footer ul:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+	margin-bottom: 25px;
+    gap: 15px;                
+}
+
+footer ul li{
+	list-style: none;
+}
+
+footer li a img{
+	width: 30px;
+	height: 30px;
+	margin: 0 0 15px 0;
+}
+
+footer ul:last-of-type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;          
+    justify-content: center; 
+    text-align: center;
+	gap: 4px;
+	padding: 0 8px;
+	margin: 20px 0;
+	line-height: 12px;
+}
+
+footer li a{
+	color: var(--text-white);
+	text-decoration: none;
+	font-size: 13px;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+}
+
+footer form{
+	display: flex;
+	flex-direction: column;
+}
+
+footer form input{
+	background: transparent;
+	border-style: solid;
+	border-color: var(--border-white);
+	border-width: 2px;
+  	color: var(--text-white);
+  	border-radius: 40px;
+  	text-decoration: none;
+	text-align: center;
+  	font-size: 18px;
+  	font-weight: bold;
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+footer form input::placeholder{
+	color: #cac4f4de;
+}
+
+footer img{
+	width: 125px;
+	margin: 25px 0;
+}
+/* Section 7 einde */
