@@ -1,0 +1,1346 @@
+
+@font-face {
+	font-family: Kopjes;
+	src: url("../fonts/nexa-heavy.ttf");
+}
+@font-face {
+	font-family: Speciaal;
+	src: url("../fonts/atypdisplay-medium.ttf");
+}
+@font-face {
+	font-family: Outlined;
+	src: url("../fonts/florencesans-sc-outline.ttf");
+}
+@font-face {
+	font-family: Bodytekst;
+	src: url("../fonts/cerebri-sans-regular.ttf");
+}
+
+:root {
+	/* Section 1 */
+	/* .notification & .customComboSection div BKG */
+	--notification-bkg: rgb(213,10,174);
+
+		/* nav BKG */
+	--nav-bkg: rgb(223,183,228);
+
+	/* General background colors */
+	--general-bkg-white: rgb(255, 255, 255);
+	--general-purple-bkg: rgb(63,7,145); 
+	--general-transparant-bkg: transparent; 
+
+	/* Nav overlay */
+	--nav-review-bkg: rgb(249,239,140); /* .navOverlay .navReview BKG */
+
+	/* ProductSection Section 1 */
+	--productsection-gradient-1: linear-gradient(to bottom, rgb(223,183,228) 0%, rgb(191,121,220) 50%);
+	--flavour-selection-gradient-1: linear-gradient(to bottom, rgb(153,55,238) 0%, rgb(95,4,237) 50%);
+
+	/* CustomComboSection Section 2 */
+	--custom-combo-gradient-2: linear-gradient(to left, rgb(250,236,118) 70%, rgb(191,239,255) 100%);
+
+	/* Banner */
+	--banner-gradient: linear-gradient(270deg, 
+		rgb(250,236,118),  
+		rgb(191,239,255),  
+		rgb(155,116,252),  
+		rgb(125,20,221),  
+		rgb(234,51,220),  
+		rgb(233,149,239)
+	);
+
+	/* ProductNutrientsSection Section 3 */
+	--product-nutrients-bkg-3: rgb(191,239,255); 
+	--product-nutrients-img: url("../images/detailpage/nutrition-bkg.jpg");
+
+	/* ReviewSection Section 5 */
+	--review-section-gradient-5: linear-gradient(to bottom, rgb(250,236,118) 25%, rgb(191,239,255) 100%);
+
+	/* Footer */
+	--footer-bkg: rgb(0,0,0);
+
+	/* .LinkButton BKG  */
+	--linkbutton-darkpurple: rgb(63,7,145);
+	--linkbutton-white: rgb(255,255,255);
+	--linkbutton-active: rgb(91,0,255); /* .productSection .addToCart .addToCartBTN:active Section 1 */
+
+	/*text colors */
+	--text-white: rgb(255,255,255);
+	--text-darkpurple: rgb(63,7,145);
+	--text-purple: rgb(90,0,236); /* .banner */
+
+	/* Border colors */
+	--border-darkpurple: rgb(63,7,145); /* .productSection li button img Section 1 */
+	--border-white: rgb(255,255,255); /* .testimonialsSection .LinkButton Section 6 & footer .LinkButton Section 7 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Section 1 */
+    --notification-bkg: rgb(63,7,145); /* .notification & .customComboSection div BKG */
+
+    /* nav BKG */
+    --nav-bkg: rgb(12,12,12);
+
+    /* General background colors */
+    --general-bkg-white: rgb(12,12,12);
+    --general-purple-bkg: rgb(26,26,26);
+	--general-transparant-bkg: rgb(12,12,12); 
+
+    /* Nav overlay */
+    --nav-review-bkg: rgb(40,4,93); /* .navOverlay .navReview BKG */
+
+    /* ProductSection Section 1 */
+    --productsection-gradient-1: linear-gradient(to top, rgb(12,12,12) 0%, rgb(12,12,12) 50%);
+
+    /* CustomComboSection Section 2 */
+    --custom-combo-gradient-2: linear-gradient(to top,  rgb(63,7,145) 0%, rgb(26,26,26) 40%);
+
+    /* Banner */
+    --banner-gradient: linear-gradient(270deg, 
+      rgb(26,26,26),  
+      rgb(63,7,145),  
+      rgb(12,12,12),  
+      rgb(91,0,255),  
+      rgb(63,7,145)
+    );
+
+    /* ProductNutrientsSection Section 3 */
+    --product-nutrients-bkg-3: rgb(26,26,26);
+    --product-nutrients-img: none;
+
+    /* ReviewSection Section 5 */
+    --review-section-gradient-5: linear-gradient(to bottom,  rgb(63,7,145) 0%, rgb(26,26,26) 40%);
+
+    /* Footer */
+    --footer-bkg: rgb(0,0,0);
+
+    /* LinkButtons */
+    --linkbutton-darkpurple: rgb(63,7,145);
+    --linkbutton-white: rgb(255,255,255);
+    --linkbutton-active: rgb(91,0,255);
+
+    /* Text colors */
+    --text-white: rgb(255,255,255);
+    --text-darkpurple: rgb(255,255,255);
+    --text-purple: rgb(255,255,255);
+
+    /* Border colors */
+    --border-darkpurple: rgb(63,7,145);
+    --border-white: rgb(63,7,145);
+  }
+}
+
+
+
+*{
+  	margin: 0;
+  	padding: 0;
+}
+
+img{
+    width: 100px;
+    height: auto;
+}
+
+/*Header*/
+/*de melding bovenaan de pagina*/
+header a{
+	text-decoration: none;
+}
+
+.notification{
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+	text-align: center;
+  	width: 100%;
+  	height: 6vh;
+  	padding: 25px 25px;
+  	background-color: var(--notification-bkg);
+  	box-sizing: border-box;
+  	justify-content: center;
+}
+
+.notification p{
+	color: var(--text-white);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+nav{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	background-color: var(--nav-bkg);
+	position: relative;
+	width: 100%;
+    padding: 20px 0;
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+}
+
+nav li{
+  	text-decoration: none;
+	padding: 0.4em;
+}
+
+nav li a span{
+	background-color: var(--linkbutton-active);
+	border-radius : 50%;
+	position : absolute;
+	right: 22px;
+	top: 25px;
+	font-size : 11px;
+    font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	color : var(--text-darkpurple);
+	padding : 2px 6px;
+}
+
+nav li a .empty{
+	display: none;
+}
+
+nav li img{
+	width: 1.2em;
+}
+
+nav img{
+	width: 5.5em;
+}
+
+nav div a img{
+	padding: 0 50px;
+}
+
+button {
+	background-color: transparent;
+  	border: none;
+}
+
+button img, li img {
+ 	width: 25px;
+}
+
+/*Hamburger menu*/
+/*bron: https://www.w3schools.com/howto/howto_js_curtain_menu.asp*/
+.navOverlay{
+	width: 100%;	
+  	height: 100%;
+  	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+  	left: 0;
+  	top: 0;
+	overflow-x: hidden;
+  	background-color: var(--general-bkg-white);
+  	transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the close button (top right corner) */
+.navOverlay .closebtn {
+  	position: absolute;
+  	top: 25px;
+  	right: 45px;
+  	font-size: 45px;
+	color: var(--text-darkpurple);
+}
+
+.navOverlay-content {
+  	position: relative;
+  	top: 15%;
+  	width: 100%;
+  	display:flex;
+  	flex-direction: column;
+	align-items: center;
+}
+
+.navOverlay-content ul{
+	list-style: none;
+	margin: 0 20px;
+}
+
+.navOverlay-content li{
+	border-bottom-style: solid;
+	border-width: 1.5px;
+	color : var(--text-darkpurple);
+	padding: 10px 0;
+	display:flex;
+  	flex-direction: column;
+	align-items: center;
+}
+
+.navOverlay-content li a{
+  	display:flex;
+  	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+	text-decoration: none;
+    font-family: Kopjes,Arial, Helvetica, sans-serif;
+}
+
+.navOverlay-content li a img{
+	width: 25%;
+	height: 25%;
+	margin: 0 20px 0 0;
+}
+
+.navOverlay-content li a h2{
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color : var(--text-darkpurple);
+	text-transform: uppercase;
+}
+
+.navOverlay-content .LinkButton{
+    width: 300px;
+	height: 30px;
+	margin: 20px 0 0.5em 0;
+  	background: var(--linkbutton-darkpurple);
+  	color: var(--text-white);
+  	border-radius: 40px;
+ 	text-decoration: none;
+  	font-size: 16px;
+  	font-weight: bold;
+	text-align: center;
+    text-transform: uppercase;
+  	flex-direction: row;
+	align-items: center;
+	text-decoration: none;
+	justify-content: center;
+    padding: 10px 25px;
+}
+
+.navOverlay-content .LinkButton img{
+	width: 15px;
+	height: 15px;
+	padding-left: 5px;
+	margin: 0;
+}
+.navOverlay-content div ul{
+	list-style: none;
+	display: grid;
+  	grid-template-columns: 1fr 1fr;
+	margin-top: 20px;
+}
+
+.navOverlay-content div li{
+  	width: 100%;
+	height: 40px;
+  	aspect-ratio: 1 / 1;
+  	object-fit: cover;
+  	display: block;
+	border: none;
+	margin: 0 30px;
+	font-family: Kopjes,Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color : var(--text-darkpurple);
+	text-transform: uppercase;
+	justify-content: center;
+	padding: 15px 0;
+	margin: 0;
+	text-align: center;
+}
+
+.navOverlay-content div li a{
+	display: flex;
+	justify-content: center;
+}
+
+.navOverlay-content .navReview{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 20px;
+	padding: 20px;
+	background-color: var(--nav-review-bkg);
+	border-radius: 10px;
+}
+
+.navOverlay-content .navReview p{
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+	color : var(--text-darkpurple);
+    margin: 20px 0 5px 0;
+}
+
+.navOverlay-content .navReview div{
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	text-align: center;
+	gap: 5px;
+}
+
+.navOverlay-content .navReview div p{
+	font-weight: bold;
+}
+
+.navOverlay-content .navReview div img{
+	width: 15px;
+	height: 15px;
+}
+/*Header_Einde*/
+
+
+
+/*Main*/
+/* Section 1_Detailpagina */
+.productSection{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+	background-image: var(--productsection-gradient-1);
+    padding: 0 20px 45px 20px;
+}
+
+.productSection .productIMG{
+	width: 85%;
+}
+
+.productSection ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.productSection li button img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--border-darkpurple);
+    margin: 45px 5px 45px 5px;
+}
+
+.productSection .productDetails{
+    margin-bottom: 45px;
+}
+
+.productSection .productDetails h1{
+  	text-align: left;
+	color : var(--text-darkpurple);
+	font-family: Outlined, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 36px;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.productSection .productDetails h2{
+	color : var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.productSection .productDetails a{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+	color : var(--text-darkpurple);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.productSection .productDetails a img{
+  	width: 100px;
+    height: auto;
+    padding-right: 5px;
+}
+
+.productSection .productDetails .description{
+    font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+    line-height: 20px;
+	color : var(--text-darkpurple);
+    margin-bottom: 35px;
+}
+
+.productSection .productDetails button{
+    font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color : var(--text-darkpurple);
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.productSection .productDetails .nutritionList{
+    list-style: none;
+	display: grid;
+  	grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.productSection .productDetails .nutritionList li{
+	width: 80%;
+    font-family: Bodytekst,Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color : var(--text-darkpurple);
+	padding: 5px 0;
+}
+
+.productSection .productDetails .nutritionList li img{
+	width: 15px;
+    margin-right: 5px;
+}
+
+.productSection .chooseFlavour{
+    width: 100%;
+}
+
+.productSection .chooseFlavour h3,.productSection .chooseFrequency h3 {
+    font-family: Bodytekst,Arial, Helvetica, sans-serif;
+	font-size: 14px;
+    text-transform: uppercase;
+	color : var(--text-darkpurple);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.productSection .chooseFlavour .flavourList{
+    width: 100%;
+    list-style: none;
+	display: grid;
+  	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 30px;
+    align-items: start;
+    justify-content: center;
+}
+
+.productSection .chooseFlavour .flavourList a{
+    text-decoration: none;
+    padding: 4px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productSection .chooseFlavour .flavourList img{
+    width: 60px;
+    height: 60px;
+}
+
+.productSection .chooseFlavour .flavourList p{
+    font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+    text-decoration: none;
+	color : var(--text-darkpurple);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*bron1: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:nth-child
+bron2: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow#:~:text=The%20drop%2Dshadow()%20CSS,a%20.*/
+.flavourList li:nth-child(6) {
+	background-image: var(--flavour-selection-gradient-1);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 5px 4px #00000051);
+}
+
+.chooseFlavour .flavourList li:nth-child(6) p {
+	color: var(--text-white);
+}
+
+.chooseFrequency {
+  	display: flex;
+  	flex-direction: column;
+  	gap: 16px;
+  	width: 100%;
+	margin-bottom: 30px;
+}
+
+.oneTimePurchase, .subscribe {
+  	display: grid;
+  	grid-template-columns: 1fr auto;
+  	grid-template-rows: auto auto;
+  	align-items: center;
+  	background: var(--general-bkg-white);
+	border-radius: 20px;
+	border-style: solid;
+    border-width: 2px;
+    border-color: var(--border-darkpurple);
+    padding: 12px 20px;
+}
+
+.chooseFrequency label {
+  	display: flex;
+  	align-items: center;
+  	gap: 10px;
+  	font-family: Bodytekst, Arial, sans-serif;
+  	font-size: 14px;
+  	font-weight: bold;
+	color : var(--text-darkpurple);
+}
+
+.chooseFrequency h4 {
+  	grid-column: 2;
+  	grid-row: 1;
+  	justify-self: end;
+	font-family: Bodytekst, Arial, sans-serif;
+  	font-size: 15px;
+  	font-weight: bold;
+	color : var(--text-darkpurple);
+}
+
+.chooseFrequency p {
+  	grid-column: 2;
+  	grid-row: 2;
+  	justify-self: end;
+	font-family: Bodytekst, Arial, sans-serif;
+  	font-size: 12px;
+  	font-weight: bold;
+	color : var(--text-darkpurple);
+}
+
+.subscribeOption {
+  	display: flex;
+  	flex-direction: column;
+  	background: var(--general-bkg-white);
+  	border-radius: 28px;
+	border-style: solid;
+    border-width: 2px;
+    border-color: var(--border-darkpurple);
+  	padding: 20px;
+  	gap: 15px;
+}
+
+.subscribe {
+  	border: none;
+  	padding: 0;
+}
+
+.subscribeOption select {
+	height: 30px;
+  	border-radius: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--border-darkpurple);
+  	text-transform: uppercase;
+  	font-weight: bold;
+	color : var(--text-darkpurple);
+	background-color: var(--general-bkg-white);
+	padding: 0 10px;
+}
+
+.subscribeOption select option{
+	font-weight: bold;
+}
+
+.productSection .subscribeOption .subscriptionBenefits{
+  	list-style: none;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	gap: 14px;
+  	padding: 0;
+}
+
+.productSection .subscribeOption .subscriptionBenefits li{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 5px;
+	gap: 5px;
+	margin: 0 6px;
+}
+
+.productSection .subscriptionBenefits li img {
+	width: 25px;
+  	height: 25px;
+}
+
+.productSection .subscriptionBenefits li p {
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+    text-decoration: none;
+	color : var(--text-darkpurple);
+    text-align: left;
+    font-weight: 100;
+}
+
+/*ChatGPT, Hoe zorg ik ervoor dat bepaalde content en styling in css alleen zichtbaar is wnnr de input tag van een label optie geselecteerd/actief is (het liefst zonder javascript)*/
+.subscribeOption:not(:has(input:checked)) select,.subscribeOption:not(:has(input:checked)) .subscriptionBenefits {
+  	display: none;
+}
+
+/*bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position*/
+.productSection .addToCart{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
+	position: relative; 
+	border-radius: 50px;
+	border-style: solid;
+    border-width: 2.5px;
+    border-color: var(--border-darkpurple);
+  	padding: 10px 20px;
+}
+
+.productSection .addToCart p:first-of-type {
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color : var(--text-darkpurple);
+    text-align: left;
+	text-transform: uppercase;
+    font-weight: 100;
+	margin-top: 0;
+	padding: 5px;
+}
+
+.productSection .addToCart div{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+.productSection .addToCart div button, .productSection .addToCart div p{
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	color : var(--text-darkpurple);
+    text-align: left;
+    font-weight: 100;
+	margin: 0 5px 0 5px;
+}
+
+/*bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position*/
+.productSection .addToCart .addToCartBTN{
+	position: absolute;
+  	top: 0;
+  	right: 0;
+  	height: 100%;
+  	width: 38%;
+  	background-color: var(--linkbutton-darkpurple);
+  	color: var(--text-white);
+  	border: none;
+  	padding: 0 35px;
+  	border-radius: 50px;
+  	font-family: Kopjes, Arial, Helvetica, sans-serif;
+  	font-size: 17px;
+	font-weight: 100;
+}
+
+.productSection  .addToCartBTN:active{
+  	transform: scale(0.95);
+  	background-color: var(--linkbutton-active);
+	color: var(--text-white);
+}
+
+.productSection p:last-of-type{
+	text-align: center;
+	color : var(--text-darkpurple);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin-top: 15px;
+}
+/* Section 1_Detailpagina einde */
+
+
+
+/* Section 2 */
+/*bron: https://www.w3schools.com/css/css_border_sides.asp
+bron2 (voor div): https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position*/
+.customComboSection{
+	background-image: var(--custom-combo-gradient-2);
+	width: 100%;
+	min-height: 60%;
+	border-top-style: solid;
+	border-width: 2px;
+	border-color: var(--border-darkpurple);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 50px 0;
+}
+
+.customComboSection div{
+	background-color: var(--notification-bkg);
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--border-darkpurple);
+	padding: 5px 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0px;
+	transform: translateY(-50%); 
+}
+
+.customComboSection div p{
+	text-align: center;
+  	color: var(--text-white);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.customComboSection h2{
+	text-align: center;
+	color : var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 35px;
+	font-size: 30px;
+	text-transform: uppercase;
+	margin-bottom: 15px; 
+}
+
+.customComboSection p{
+	text-align: center;
+	color : var(--text-darkpurple);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+.customComboSection .LinkButton{
+    width: 45%;
+	height: 5%;
+  	background: var(--linkbutton-darkpurple);
+	border-radius: 40px;
+  	color: var(--text-white);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+  	font-size: 17px;
+  	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    padding: 10px 15px;
+	margin: 15px 0 40px 0;
+}
+
+.customComboSection img{
+	width: 90%;
+}
+/* Section 2_Einde */
+
+
+/*Animated Banner*/
+/* bron 1: https://www.w3schools.com/css/css3_animations.asp
+bron 2: https://www.w3schools.com/cssref/atrule_keyframes.php
+bron 3: https://www.sliderrevolution.com/resources/css-animated-gradient/
+bron 4: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space*/
+.banner {
+    height: 60px;
+    display: flex;
+	overflow: hidden;
+    align-items: center;
+	color : var(--text-purple);
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	text-transform: uppercase;
+    background: var(--banner-gradient);
+    background-size: 1400% 1400%; /* vergroot gradient voor beweging */
+    animation: bkgAnimation 17s linear infinite;
+}
+
+.banner ul {
+	list-style: square;
+    display: flex;
+    width: 100%;
+    animation: slideText 3s linear infinite;
+}
+
+.banner li {
+    margin-right: 40px;
+	padding: 10px 0 10px 18px;
+    white-space: nowrap;
+}
+
+@keyframes slideText {
+    0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); } /* halve breedte, voor vloeiende loop */
+}
+
+@keyframes bkgAnimation {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/*Animate Banner_Einde*/
+
+
+/* Section 3 */
+.productNutrientsSection{
+	width: auto;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--product-nutrients-bkg-3);
+	background-image: var(--product-nutrients-img);
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	padding: 20px 30px;
+}
+
+.productNutrientsSection ul{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+	list-style: none;
+	gap: 30px 20px;
+}
+
+.productNutrientsSection li h2{
+	color : var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	line-height: 25px;
+	font-size: 19px;
+	text-transform: uppercase;
+	margin-bottom: 10px 
+}
+
+.productNutrientsSection li p{
+	color : var(--text-darkpurple);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
+
+.productNutrientsSection img {
+  	width: 80%;
+  	animation: floatingImage 4s ease-in-out infinite;
+}
+
+/* bron: https://www.w3schools.com/cssref/atrule_keyframes.php*/
+@keyframes floatingImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Section 3_Einde */
+
+
+
+/* Section 4*/
+/*bron 1: ChatGPT
+bron 2: https://www.w3schools.com/html/html_table_styling.asp
+bron 3: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/table-layout
+bron4: https://www.youtube.com/watch?v=biI9OFH6Nmg
+bron 5: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables*/
+.ourProductsVSTheirsSection{
+	width: auto;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: var(--product-nutrients-bkg-3);
+	padding: 20px 20px;
+}
+
+.ourProductsVSTheirsSection h2{
+	color : var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+.ourProductsVSTheirsSection h3{
+	color : var(--text-darkpurple);
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	margin-bottom: 30px;
+}
+
+
+/*ChatGPT, Eerlijk ik kwam er echt niet uit met die stijling van die tabel. Dit is het beste wat ik ermee kan doen met hulp van ChatGPT. Vroeg vooral hulp voor het selecteren (die nth, niet gelukt) van dingen en hoe ik die rondingen per cel krijg.*/
+.ourProductsVSTheirsSection table {
+  	width: 100%;
+  	max-width: 100%;
+  	border-collapse: separate;
+  	border-spacing: 0;
+  	border-radius: 20px;
+  	overflow: hidden;
+  	font-family: Bodytekst, Arial, sans-serif;
+}
+
+.ourProductsVSTheirsSection th,
+.ourProductsVSTheirsSection td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--border-darkpurple);
+  	padding: 16px 18px;
+  	font-size: 16px;
+  	text-align: center;
+  	box-sizing: border-box;
+}
+
+.ourProductsVSTheirsSection th:first-child,
+.ourProductsVSTheirsSection td:first-child {
+  	background: var(--general-bkg-white);
+	color : var(--text-darkpurple);
+  	font-weight: 700;
+  	text-align: left;
+  	width: 34%;
+}
+
+.ourProductsVSTheirsSection tr:first-of-type th:nth-child(2) {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.ourProductsVSTheirsSection tr .noBackground{
+  	background: transparent;
+  	border: none;
+	color : var(--text-darkpurple);
+  	font-weight: 700;
+  	text-align: left;
+  	width: 34%;
+}
+
+.ourProductsVSTheirsSection th:nth-child(2),
+.ourProductsVSTheirsSection td:nth-child(2) {
+  	background-image: linear-gradient(to bottom, rgb(124,20,220), rgb(193,9,183));
+  	color: var(--text-white);
+  	font-weight: 700;
+  	width: 33%;
+}
+
+.ourProductsVSTheirsSection th:nth-child(2) img {
+  	width: 120px;
+  	max-width: 100%;
+}
+
+.ourProductsVSTheirsSection th:nth-child(3),
+.ourProductsVSTheirsSection td:nth-child(3) {
+  	background: var(--product-nutrients-bkg-3);
+	color : var(--text-darkpurple);
+  	font-weight: 700;
+  	width: 33%;
+}
+
+.ourProductsVSTheirsSection tr:nth-child(2) th:first-child {
+  	border-top-left-radius: 20px;
+}
+
+.ourProductsVSTheirsSection tr:nth-child(2) th:last-child {
+  	border-top-right-radius: 20px;
+}
+
+.ourProductsVSTheirsSection tr:last-child td:first-child {
+  	border-bottom-left-radius: 20px;
+}
+
+.ourProductsVSTheirsSection tr:last-child td:last-child {
+  	border-bottom-right-radius: 20px;
+}
+/*Tot hier hulp van ChatGPT*/
+
+.ourProductsVSTheirsSection tr {
+  height: 70px;
+}
+
+.ourProductsVSTheirsSection td img {
+  width: 40%;
+}
+
+.ourProductsVSTheirsSection p {
+	color: var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: 100;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+/*Section 4_Einde*/
+
+
+
+/* Section 5 */
+.reviewSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: var(--review-section-gradient-5);
+    padding: 50px 22px;
+    text-align: center;
+}
+
+.reviewSection h2 {
+	color : var(--text-darkpurple);
+	font-family: Outlined, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	font-weight: 500;
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+.reviewSection h3 {
+	color : var(--text-darkpurple);
+	font-family: Kopjes, Arial, Helvetica, sans-serif;
+	font-size: 40px;
+}
+
+.reviewSection img {
+    width: 130px;
+	margin-bottom: 10px;
+}
+
+.reviewSection p {
+	color : var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.reviewSection #sortingOptions {
+    width: 100%;
+    padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: var(--border-darkpurple);
+	color : var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: var(--general-transparant-bkg);
+	margin: 35px 0;
+}
+
+.reviewSection ul {
+	width: 85%;
+    list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.reviewSection ul.reverse {
+    flex-direction: column-reverse;
+}
+
+.reviewSection li {
+	width: 100%;
+	height: 200px;
+    background-color: var(--general-bkg-white);
+    text-align: left;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.reviewSection li div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewSection li h4 {
+	color : var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.reviewSection li p {
+	color : var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.reviewSection li img {
+    width: 125px;
+	margin: 20px 0;
+}
+
+.reviewSection li div:last-of-type{
+	width: 280px;
+	height: 2px;
+	background-color: var(--general-purple-bkg);
+	margin: 10px 0 0 0;
+}
+
+.reviewSection li h5 {
+	color : var(--text-darkpurple);
+	font-family: Outlined, Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	text-transform: uppercase;
+}
+
+.reviewSection li p:last-of-type {
+	color : var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 100;
+	text-transform: none;
+}
+
+.reviewSection button {
+	width: 35%;
+    padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--border-darkpurple);
+	color: var(--text-darkpurple);
+	font-family: Bodetekst, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: transparent;
+	margin-bottom: 30px;
+}
+
+.reviewSection li.hidden {
+    display: none;
+}
+/* Section 5_Einde */
+
+
+
+/* Section 6_Footer*/
+footer{
+	background-color: var(--footer-bkg);
+}
+
+footer section {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 60px 20px; 
+}
+
+footer .LinkButton{
+	background: transparent;
+	border-style: solid;
+	border-color: var(--border-white);
+	border-width: 2px;
+  	color: var(--text-white);
+  	border-radius: 40px;
+  	text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  	font-size: 18px;
+  	font-weight: bold;
+	width: 130px;
+	margin-bottom: 17px;
+    padding: 15px 25px;
+    margin: 0.5em 0;
+
+}
+
+footer h2, footer p{
+	color: var(--text-white);
+}
+
+footer p{
+	font-size: 13px;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+}
+
+footer h2{
+	font-size: 19px;
+	font-family: Speciaal, Arial, Helvetica, sans-serif;
+	font-weight: 500;
+}
+
+footer ul:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+	margin-bottom: 25px;
+    gap: 15px;                
+}
+
+footer ul li{
+	list-style: none;
+}
+
+footer li a img{
+	width: 30px;
+	height: 30px;
+	margin: 0 0 15px 0;
+}
+
+footer ul:last-of-type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;          
+    justify-content: center; 
+    text-align: center;
+	gap: 4px;
+	padding: 0 8px;
+	margin: 20px 0;
+	line-height: 12px;
+}
+
+footer li a{
+	color: var(--text-white);
+	text-decoration: none;
+	font-size: 13px;
+	font-family: Bodytekst, Arial, Helvetica, sans-serif;
+}
+
+footer form{
+	display: flex;
+	flex-direction: column;
+}
+
+footer form input{
+	background: transparent;
+	border-style: solid;
+	border-color: var(--border-white);
+	border-width: 2px;
+  	color: var(--text-white);
+  	border-radius: 40px;
+  	text-decoration: none;
+	text-align: center;
+  	font-size: 18px;
+  	font-weight: bold;
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+}
+
+footer form input::placeholder{
+	color: #cac4f4de;
+}
+
+footer img{
+	width: 125px;
+	margin: 25px 0;
+}
+/* Section 6 einde */
+
